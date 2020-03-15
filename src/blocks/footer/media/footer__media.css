@@ -1,0 +1,23 @@
+@media screen and (max-width: 1024px) {
+  .footer__menu-list-item:first-of-type {
+    margin-right: 16px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .footer__copyright {
+    order: 3;
+  }
+
+  .footer__menu-list-item {
+    display: block;
+  }
+
+  .footer__menu-list-item:first-of-type {
+    margin: 0 0 24px;
+  }
+
+  .footer__menu-list {
+    margin-bottom: 36px;
+  }
+}

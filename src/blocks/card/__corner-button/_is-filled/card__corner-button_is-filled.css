@@ -1,0 +1,7 @@
+.card__corner-button_is-filled {
+  background-image: url(~images/icon/bookmark/bookmark-filled.svg);
+}
+
+.card__corner-button_is-filled:hover {
+  background-image: url(~images/icon/bookmark/bookmark-filled.svg);
+}

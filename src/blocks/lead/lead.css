@@ -1,0 +1,11 @@
+@import url('./__container/lead__container.css');
+@import url('./__wrapper/lead__wrapper.css');
+@import url('./__subtitle/lead__subtitle.css');
+@import url('./__title/lead__title.css');
+
+.lead {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  color: white;
+}

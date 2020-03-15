@@ -1,0 +1,12 @@
+.header__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px grey solid;
+  padding: 0 30px;
+  min-height: 50px;
+  position: relative;
+}

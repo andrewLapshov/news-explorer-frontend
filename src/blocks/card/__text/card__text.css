@@ -1,0 +1,10 @@
+.card__text {
+  font-size: 16px;
+  line-height: 1.37;
+  margin: 0 0 10px 0;
+  flex-grow: 1;
+  width: 100%;
+  height: auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

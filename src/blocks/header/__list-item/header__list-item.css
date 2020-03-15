@@ -1,0 +1,7 @@
+.header__list-item {
+  display: inline-block;
+  margin-left: 32px;
+  font-size: 18px;
+  height: 100%;
+  position: relative;
+}

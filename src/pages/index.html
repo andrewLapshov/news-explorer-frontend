@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NewsExplorer - сервис поиска новостей в Интернет-СМИ по ключевому слову"
+    />
+    <meta name="author" content="Андрей Лапшов" />
+    <title>NewsExplorer</title>
+    <link
+      rel="stylesheet"
+      href="<%=htmlWebpackPlugin.files.chunks.main.css %>"
+    />
+    <link
+      rel="shortcut icon"
+      href="<%=require('../images/favicon.png')%>"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <div class="root">
+      <main>
+        <div class="bg-image">
+          <header class="header">
+            <div class="container container_section_header">
+              <div class="header__item-wrapper">
+                <span class="header__logo">NewsExplorer</span>
+              </div>
+              <div class="header__item-wrapper">
+                <nav class="header__menu header__menu_white" tabindex="0">
+                  <ul class="header__list header__list_black">
+                    <li class="header__list-item">
+                      <div class="header__item-wrapper">
+                        <a href="/" class="header__link">Главная</a>
+                        <div
+                          class="header__link-underline header__link-underline_active"
+                        ></div>
+                      </div>
+                    </li>
+                    <li class="header__list-item">
+                      <div class="header__item-wrapper">
+                        <a href="./secondary" class="header__link"
+                          >Сохранённые статьи</a
+                        >
+                        <div class="header__link-underline"></div>
+                      </div>
+                    </li>
+                    <li class="header__list-item">
+                      <div class="header__item-wrapper">
+                        <button class="header__button">
+                          <span class="header__button-text"
+                            >Авторизоваться</span
+                          >
+                          <i class="header__button-icon"></i>
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </header>
+
+          <div class="divider"></div>
+
+          <section class="lead">
+            <div class="container container_section_lead">
+              <div class="lead__wrapper">
+                <h1 class="lead__title">Что в мире творится?</h1>
+                <p class="lead__subtitle">
+                  Находите самые свежие статьи на любую тему и сохраняйте в
+                  своём личном кабинете.
+                </p>
+                <form class="search form">
+                  <input
+                    type="text"
+                    name="search"
+                    class="search__input"
+                    placeholder="Введите тему новости"
+                  />
+                  <button class="search__button">Искать</button>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section class="results results_is-active">
+          <div class="container container_section_results">
+            <h2 class="results__title">Результаты поиска</h2>
+            <div class="results__content-wrapper">
+              <div class="results__list">
+                <div class="card">
+                  <div class="card__image">
+                    <button class="card__corner-button"></button>
+                  </div>
+                  <div class="card__description">
+                    <span class="card__date">2 августа, 2019</span>
+                    <h3 class="card__title">Национальное достояние – парки</h3>
+                    <p class="card__text">
+                      В 2016 году Америка отмечала важный юбилей: сто лет назад
+                      здесь начала складываться система национальных парков –
+                      охраняемых территорий, где и сегодня каждый может
+                      приобщиться к природе.
+                    </p>
+                  </div>
+                  <span class="card__source">Лента.ру</span>
+                </div>
+                <div class="card">
+                  <div class="card__image">
+                    <button class="card__corner-button"></button>
+                  </div>
+                  <div class="card__description">
+                    <span class="card__date">2 августа, 2019</span>
+                    <h3 class="card__title">Национальное достояние – парки</h3>
+                    <p class="card__text">
+                      В 2016 году Америка отмечала важный юбилей: сто лет назад
+                      здесь начала складываться система национальных парков –
+                      охраняемых территорий, где и сегодня каждый может
+                      приобщиться к природе.
+                    </p>
+                  </div>
+                  <span class="card__source">Лента.ру</span>
+                </div>
+                <div class="card">
+                  <div class="card__image">
+                    <button class="card__corner-button"></button>
+                  </div>
+                  <div class="card__description">
+                    <span class="card__date">2 августа, 2019</span>
+                    <h3 class="card__title">Национальное достояние – парки</h3>
+                    <p class="card__text">
+                      В 2016 году Америка отмечала важный юбилей: сто лет назад
+                      здесь начала складываться система национальных парков –
+                      охраняемых территорий, где и сегодня каждый может
+                      приобщиться к природе.
+                    </p>
+                  </div>
+                  <span class="card__source">Лента.ру</span>
+                </div>
+                <div class="card">
+                  <div class="card__image">
+                    <button class="card__corner-button"></button>
+                  </div>
+                  <div class="card__description">
+                    <span class="card__date">2 августа, 2019</span>
+                    <h3 class="card__title">Национальное достояние – парки</h3>
+                    <p class="card__text">
+                      В 2016 году Америка отмечала важный юбилей: сто лет назад
+                      здесь начала складываться система национальных парков –
+                      охраняемых территорий, где и сегодня каждый может
+                      приобщиться к природе.
+                    </p>
+                  </div>
+                  <span class="card__source">Лента.ру</span>
+                </div>
+              </div>
+              <div class="preloader">
+                <i class="preloader__element"></i>
+                <span class="preloader__caption">Идет поиск новостей...</span>
+              </div>
+              <div class="results__no-results">
+                <img
+                  src="<%=require('../images/not-found.svg')%>"
+                  alt="Нет результатов"
+                  class="results__no-results-image"
+                />
+                <h3 class="results__no-results-title">Ничего не найдено</h3>
+                <p class="results__no-results-text">
+                  К сожалению, по вашему запросу ничего не найдено.
+                </p>
+              </div>
+              <span class="results__message"></span>
+
+              <button class="results__button results__button_active">
+                Показать ещё
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="author">
+          <div class="container container_section_author">
+            <img
+              src="<%=require('../images/author.jpg')%>"
+              alt="Фото автора"
+              class="author__photo"
+            />
+            <div class="author__about">
+              <h2 class="author__title">Об авторе</h2>
+              <p class="author__description">
+                Это блок с описанием автора проекта. Здесь следует указать, как
+                вас зовут, чем вы занимаетесь, какими технологиями разработки
+                владеете.
+              </p>
+              <p class="author__description">
+                Также можно рассказать о процессе обучения в Практикуме, чему вы
+                тут научились, и чем можете помочь потенциальным заказчикам.
+                Красавчик одним словом.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <%= require('html-loader!../templates/footer.html') %>
+
+      <div class="popup"></div>
+
+      <template class="popup__template_type_signup">
+        <div class="popup__content popup__content_type_signup">
+          <img
+            src="<%=require('../images/icon/close.svg')%>"
+            alt="закрыть"
+            class="popup__close"
+          />
+          <h2 class="popup__title">Регистрация</h2>
+          <form action="" class="popup__form">
+            <label for="email" class="popup__input-label">Email</label>
+            <input
+              name="email"
+              class="popup__input"
+              placeholder="Введите почту"
+              pattern="[\w\-\.]{2,}@[\w-]{2,}(\.[\w-]{2,})?\.[\w-]{2,}"
+              required
+            />
+            <span class="popup__error">Неверный email</span>
+            <label for="password" class="popup__input-label">Пароль</label>
+            <input
+              type="password"
+              name="password"
+              class="popup__input"
+              placeholder="Введите пароль"
+              required
+            />
+            <span class="popup__error"></span>
+            <label for="username" class="popup__input-label">Имя</label>
+            <input
+              type="text"
+              name="name"
+              class="popup__input"
+              placeholder="Введите своё имя"
+              required
+            />
+            <span class="popup__error"></span>
+
+            <span class="popup__error popup__error_submit"
+              >Такой пользователь уже есть</span
+            >
+            <button class="popup__submit" name="submit">
+              Зарегистрироваться
+            </button>
+
+            <span class="popup__switch"
+              >или <span class="popup__switch-link">Войти</span></span
+            >
+          </form>
+        </div>
+      </template>
+
+      <template class="popup__template_type_success">
+        <div class="popup__content popup__content_type_success">
+          <img
+            src="<%=require('../images/icon/close.svg')%>"
+            alt="закрыть"
+            class="popup__close"
+          />
+          <h2 class="popup__title">Пользователь успешно зарегистрирован!</h2>
+          <span class="popup__switch-link">Выполнить вход</span>
+        </div>
+      </template>
+
+      <template class="popup__template_type_login">
+        <div class="popup__content popup__content_type_signup">
+          <img
+            src="<%=require('../images/icon/close.svg')%>"
+            alt="закрыть"
+            class="popup__close"
+          />
+          <h2 class="popup__title">Вход</h2>
+          <form action="" class="popup__form">
+            <label for="email" class="popup__input-label">Email</label>
+            <input
+              type="email"
+              name="email"
+              class="popup__input"
+              placeholder="Введите почту"
+              pattern="[\w\-\.]{2,}@[\w-]{2,}(\.[\w-]{2,})?\.[\w-]{2,}"
+              required
+            />
+            <span class="popup__error"></span>
+            <label for="password" class="popup__input-label">Пароль</label>
+            <input
+              type="password"
+              name="password"
+              class="popup__input"
+              placeholder="Введите пароль"
+              required
+            />
+            <span class="popup__error"></span>
+
+            <button class="popup__submit" name="submit">Войти</button>
+            <span class="popup__switch"
+              >или
+              <span class="popup__switch-link">Зарегистрироваться</span></span
+            >
+          </form>
+        </div>
+      </template>
+
+      <template class="card-template">
+        <div class="card">
+          <div class="card__image">
+            <button class="card__corner-button"></button>
+          </div>
+          <div class="card__description">
+            <span class="card__date"></span>
+            <h3 class="card__title"></h3>
+            <p class="card__text"></p>
+          </div>
+          <span class="card__source"></span>
+        </div>
+      </template>
+
+      <template class="card-bookmark-template">
+        <div class="card">
+          <div class="card__image">
+            <div class="card__keyword"></div>
+            <button class="card__corner-button"></button>
+            <div class="card__corner-label"></div>
+          </div>
+          <div class="card__description">
+            <span class="card__date"></span>
+            <h3 class="card__title"></h3>
+            <p class="card__text"></p>
+            <span class="card__source"></span>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  </body>
+</html>

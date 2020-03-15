@@ -1,0 +1,23 @@
+.popup__input {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  padding-bottom: 10px;
+  font-size: 14px;
+  line-height: 17px;
+  font-family: Inter;
+  transition: border 0.2s ease;
+}
+
+.popup__input::placeholder {
+  opacity: 0.2;
+}
+
+.popup__input:focus {
+  border: 1px black solid;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}

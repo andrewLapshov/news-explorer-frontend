@@ -1,0 +1,7 @@
+.footer__menu-list-item {
+  display: inline-block;
+}
+
+.footer__menu-list-item:first-of-type {
+  margin-right: 40px;
+}

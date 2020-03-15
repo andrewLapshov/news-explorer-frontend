@@ -1,0 +1,7 @@
+.author__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  box-sizing: border-box;
+  padding: 40px;
+}

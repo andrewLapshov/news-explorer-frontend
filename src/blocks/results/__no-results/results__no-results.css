@@ -1,0 +1,5 @@
+.results__no-results {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}

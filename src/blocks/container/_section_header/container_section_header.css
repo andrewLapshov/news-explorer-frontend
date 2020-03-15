@@ -1,0 +1,7 @@
+.container.container_section_header {
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0 104px;
+  height: 80px;
+  position: relative;
+}

@@ -1,0 +1,11 @@
+.card__corner-button_remove {
+  background-image: url(~images/icon/trash/trash.svg);
+}
+
+.card__corner-button_remove:hover {
+  background-image: url(~images/icon/trash/trash-hover.svg);
+}
+
+.card__corner-button:focus {
+  background-image: url(~images/icon/trash/trash-hover.svg);
+}

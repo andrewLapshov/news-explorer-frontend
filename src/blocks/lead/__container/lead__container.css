@@ -1,0 +1,8 @@
+.lead__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  box-sizing: border-box;
+  padding: 40px 0;
+  flex-direction: column;
+}

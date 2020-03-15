@@ -1,0 +1,6 @@
+.container.container_section_footer {
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 104px 0;
+}

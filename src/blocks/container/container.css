@@ -1,0 +1,15 @@
+@import url('./_section_article-info/container_section_article-info.css');
+@import url('./_section_author/container_section_author.css');
+@import url('./_section_bookmarks/container_section_bookmarks.css');
+@import url('./_section_footer/container_section_footer.css');
+@import url('./_section_header/container_section_header.css');
+@import url('./_section_lead/container_section_lead.css');
+@import url('./_section_results/container_section_results.css');
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  box-sizing: border-box;
+  padding: 80px 104px;
+}

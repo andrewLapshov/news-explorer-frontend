@@ -1,0 +1,11 @@
+.results__no-results-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.33;
+  text-align: center;
+  color: #b6bcbf;
+  margin: 0;
+  max-width: 300px;
+}

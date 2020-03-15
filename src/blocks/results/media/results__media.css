@@ -1,0 +1,27 @@
+@media screen and (max-width: 1000px) {
+  .results__list {
+    grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .results__title {
+    font-size: 30px;
+    margin-bottom: 32px;
+  }
+
+  .results__list {
+    grid-gap: 8px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .results__title {
+    margin-bottom: 24px;
+  }
+
+  .results__list {
+    grid-gap: 10px;
+    margin-bottom: 16px;
+  }
+}

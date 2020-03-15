@@ -1,0 +1,11 @@
+.preloader__caption {
+  display: block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #b6bcbf;
+  text-align: center;
+  margin: 0 auto;
+}

@@ -1,0 +1,15 @@
+.header__link {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  display: block;
+  margin: auto;
+}
+
+.header__link_state_login {
+  color: #1a1b22;
+}
+
+.header__link_state_login:hover::after {
+  background: #1a1b22;
+}

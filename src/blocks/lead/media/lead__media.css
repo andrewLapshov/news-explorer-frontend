@@ -1,0 +1,27 @@
+@media screen and (max-width: 1024px) {
+  .lead__list-item {
+    font-size: 16px;
+    margin-left: 16px;
+  }
+
+  .lead__title {
+    margin: 0 0 16px;
+    font-size: 36px;
+    max-width: 385px;
+  }
+
+  .lead__subtitle {
+    margin: 0 0 48px;
+    max-width: 452px;
+  }
+
+  .lead__wrapper {
+    max-width: 448px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .lead__subtitle {
+    margin: 0 0 122px;
+  }
+}
