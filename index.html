@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="NewsExplorer - сервис поиска новостей в Интернет-СМИ по ключевому слову"
+    />
+    <meta name="author" content="Андрей Лапшов" />
     <title>NewsExplorer</title>
     <link
       rel="stylesheet"
-      href="main/style.55a84722e554551696da.css"
+      href="main/main.4a4d039cb0d580a08013.css"
     />
     <link
       rel="shortcut icon"
@@ -26,8 +30,8 @@
                 <span class="header__logo">NewsExplorer</span>
               </div>
               <div class="header__item-wrapper">
-                <nav class="header__menu" tabindex="0">
-                  <ul class="header__list">
+                <nav class="header__menu header__menu_white" tabindex="0">
+                  <ul class="header__list header__list_black">
                     <li class="header__list-item">
                       <div class="header__item-wrapper">
                         <a href="/" class="header__link">Главная</a>
@@ -50,7 +54,7 @@
                           <span class="header__button-text"
                             >Авторизоваться</span
                           >
-                          <div class="header__button-icon"></div>
+                          <i class="header__button-icon"></i>
                         </button>
                       </div>
                     </li>
@@ -91,11 +95,7 @@
               <div class="results__list">
                 <div class="card">
                   <div class="card__image">
-                    <div class="card__keyword">Природа</div>
                     <button class="card__corner-button"></button>
-                    <div class="card__corner-label">
-                      Удалить из сохраненных
-                    </div>
                   </div>
                   <div class="card__description">
                     <span class="card__date">2 августа, 2019</span>
@@ -111,11 +111,7 @@
                 </div>
                 <div class="card">
                   <div class="card__image">
-                    <div class="card__keyword">Природа</div>
                     <button class="card__corner-button"></button>
-                    <div class="card__corner-label">
-                      Удалить из сохраненных
-                    </div>
                   </div>
                   <div class="card__description">
                     <span class="card__date">2 августа, 2019</span>
@@ -131,11 +127,7 @@
                 </div>
                 <div class="card">
                   <div class="card__image">
-                    <div class="card__keyword">Природа</div>
                     <button class="card__corner-button"></button>
-                    <div class="card__corner-label">
-                      Удалить из сохраненных
-                    </div>
                   </div>
                   <div class="card__description">
                     <span class="card__date">2 августа, 2019</span>
@@ -151,11 +143,7 @@
                 </div>
                 <div class="card">
                   <div class="card__image">
-                    <div class="card__keyword">Природа</div>
                     <button class="card__corner-button"></button>
-                    <div class="card__corner-label">
-                      Удалить из сохраненных
-                    </div>
                   </div>
                   <div class="card__description">
                     <span class="card__date">2 августа, 2019</span>
@@ -309,7 +297,7 @@
             </button>
 
             <span class="popup__switch"
-              >или <a href="#" class="popup__switch-link">Войти</a></span
+              >или <span class="popup__switch-link">Войти</span></span
             >
           </form>
         </div>
@@ -323,7 +311,7 @@
             class="popup__close"
           />
           <h2 class="popup__title">Пользователь успешно зарегистрирован!</h2>
-          <a href="#" class="popup__switch-link">Выполнить вход</a>
+          <span class="popup__switch-link">Выполнить вход</span>
         </div>
       </template>
 
@@ -334,7 +322,7 @@
             alt="закрыть"
             class="popup__close"
           />
-          <h2 class="popup__title">Регистрация</h2>
+          <h2 class="popup__title">Вход</h2>
           <form action="" class="popup__form">
             <label for="email" class="popup__input-label">Email</label>
             <input
@@ -356,12 +344,9 @@
             <span class="popup__error"></span>
 
             <button class="popup__submit" name="submit">Войти</button>
-            <span class="popup__error popup__error_submit"></span>
             <span class="popup__switch"
               >или
-              <a href="#" class="popup__switch-link"
-                >Зарегистрироваться</a
-              ></span
+              <span class="popup__switch-link">Зарегистрироваться</span></span
             >
           </form>
         </div>
@@ -371,17 +356,13 @@
         <div class="card">
           <div class="card__image">
             <button class="card__corner-button"></button>
-            <div class="card__corner-label">
-              Войдите, чтобы сохранять статьи
-            </div>
           </div>
-          <span class="card__date"></span>
-          <h3 class="card__title"></h3>
-          <p class="card__text"></p>
+          <div class="card__description">
+            <span class="card__date"></span>
+            <h3 class="card__title"></h3>
+            <p class="card__text"></p>
+          </div>
           <span class="card__source"></span>
-          <!-- <div class="card__description">
-
-        </div> -->
         </div>
       </template>
 
@@ -392,45 +373,16 @@
             <button class="card__corner-button"></button>
             <div class="card__corner-label"></div>
           </div>
-          <span class="card__date"></span>
-          <h3 class="card__title"></h3>
-          <p class="card__text"></p>
-          <span class="card__source"></span>
-          <!-- <div class="card__description">
-
-            </div> -->
+          <div class="card__description">
+            <span class="card__date"></span>
+            <h3 class="card__title"></h3>
+            <p class="card__text"></p>
+            <span class="card__source"></span>
+          </div>
         </div>
       </template>
     </div>
 
-    <script src="main/main.c783f0c7fe9263894d2f.js"></script>
+    <script src="main/main.428c28e9b9be21aa2521.js"></script>
   </body>
 </html>
-
-<!-- TODO:
--разбить container на папки с модификаторами
--разбить button search и popup по папками с модификаторами
--->
-
-<!-- карточка для ЛК -->
-
-<!-- <div class="card">
-  <div class="card__image">
-    <div class="card__keyword">Природа</div>
-    <button class="card__corner-button"></button>
-    <div class="card__corner-label">
-      Удалить из сохраненных
-    </div>
-  </div>
-  <div class="card__description">
-    <span class="card__date">2 августа, 2019</span>
-    <h3 class="card__title">Национальное достояние – парки</h3>
-    <p class="card__text">
-      В 2016 году Америка отмечала важный юбилей: сто лет назад
-      здесь начала складываться система национальных парков –
-      охраняемых территорий, где и сегодня каждый может
-      приобщиться к природе.
-    </p>
-  </div>
-  <span class="card__source">Лента.ру</span>
-</div> -->
