@@ -34,7 +34,7 @@
                   <ul class="header__list header__list_black">
                     <li class="header__list-item">
                       <div class="header__item-wrapper">
-                        <a href="/" class="header__link">Главная</a>
+                        <a href="./" class="header__link">Главная</a>
                         <div
                           class="header__link-underline header__link-underline_active"
                         ></div>
@@ -206,7 +206,51 @@
         </section>
       </main>
 
-      <%= require('html-loader!../templates/footer.html') %>
+      <footer class="footer">
+        <div class="container container_section_footer">
+          <span class="footer__copyright"
+            >2020 Андрей Лапшов, Powered by News API</span
+          >
+          <nav class="footer__menu">
+            <ul class="footer__menu-list">
+              <li class="footer__menu-list-item">
+                <a href="./" class="footer__menu-link">Главная</a>
+              </li>
+              <li class="footer__menu-list-item">
+                <a href="https://praktikum.yandex.ru/" class="footer__menu-link"
+                  >Яндекс.Практикум</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <ul class="footer__social-list">
+            <li class="footer__social-list-item">
+              <a
+                href="https://github.com/andrewLapshov/"
+                class="footer__social-link"
+              >
+                <img
+                  src="<%=require('../images/social/github.svg')%>"
+                  alt="github"
+                  class="footer__social-icon"
+                />
+              </a>
+            </li>
+            <li class="footer__social-list-item">
+              <a
+                href="https://www.facebook.com/andrew.lapshov"
+                class="footer__social-link"
+              >
+                <img
+                  src="<%= require('../images/social/facebook.svg') %>"
+                  alt="facebook"
+                  class="footer__social-icon"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
 
       <div class="popup"></div>
 

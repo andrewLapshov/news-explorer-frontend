@@ -6,6 +6,6 @@
   background-image: url(~images/icon/trash/trash-hover.svg);
 }
 
-.card__corner-button:focus {
+.card__corner-button_remove:focus {
   background-image: url(~images/icon/trash/trash-hover.svg);
 }
