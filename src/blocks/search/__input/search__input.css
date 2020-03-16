@@ -10,6 +10,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
+  caret-color: #2f71e5;
 }
 
 .search__input::placeholder {
