@@ -1,0 +1,19 @@
+.card__corner-label {
+  position: absolute;
+  top: 24px;
+  right: 69px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 14px 15px 14px;
+  color: black;
+  font-weight: bold;
+  background-color: white;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+  display: none;
+}
+
+.card__corner-button:hover + .card__corner-label {
+  display: block;
+}

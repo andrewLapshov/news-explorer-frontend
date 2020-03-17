@@ -1,0 +1,10 @@
+.author__description {
+  font-size: 18px;
+  line-height: 1.33;
+  color: #1a1b22;
+  margin: 0;
+}
+
+.author__description:first-of-type {
+  margin-bottom: 20px;
+}

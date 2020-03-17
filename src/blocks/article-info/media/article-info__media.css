@@ -1,0 +1,12 @@
+@media screen and (max-width: 426px) {
+  .article-info__subtitle {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .article-info__title {
+    font-size: 30px;
+    line-height: 34px;
+    margin: 0 0 16px;
+  }
+}

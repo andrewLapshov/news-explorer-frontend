@@ -1,0 +1,8 @@
+@import url('./__element/preloader__element.css');
+@import url('./__caption/preloader__caption.css');
+@import url('./_is-active/preloader_is-active.css');
+
+.preloader {
+  display: none;
+  position: relative;
+}

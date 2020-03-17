@@ -1,0 +1,19 @@
+.header__button {
+  height: 48px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 100px;
+  padding: 0 14px;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__button_state_login {
+  border: 1px solid #d1d2d6;
+}

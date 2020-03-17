@@ -1,0 +1,23 @@
+@media screen and (max-width: 1024px) {
+  .search__button {
+    width: 160px;
+    height: 56px;
+  }
+
+  .search__input {
+    height: 56px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .search__button {
+    position: static;
+    width: 100%;
+    height: 56px;
+  }
+
+  .search__input {
+    margin-bottom: 16px;
+    padding: 0 16px;
+  }
+}

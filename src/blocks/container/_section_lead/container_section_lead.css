@@ -1,0 +1,4 @@
+.container.container_section_lead {
+  flex-direction: column;
+  padding: 80px 16px;
+}

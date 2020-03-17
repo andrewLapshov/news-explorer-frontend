@@ -1,0 +1,12 @@
+.footer__menu-link {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #1a1b22;
+  transition: opacity 0.1s ease;
+}
+
+.footer__menu-link:hover {
+  opacity: 0.8;
+}

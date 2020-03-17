@@ -1,0 +1,8 @@
+.author__photo {
+  max-width: 464px;
+  width: calc(100% - 600px);
+  object-fit: contain;
+  object-position: center;
+  margin-right: 56px;
+  border-radius: 50%;
+}

@@ -1,0 +1,26 @@
+.card__corner-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 10px;
+  color: black;
+  background-color: white;
+  background-image: url(~images/icon/bookmark/bookmark.svg);
+  background-position: center;
+  background-size: initial;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.card__corner-button:hover {
+  background-image: url(~images/icon/bookmark/bookmark-hover.svg);
+}
+
+.card__corner-button:focus {
+  background-image: url(~images/icon/bookmark/bookmark-focus.svg);
+}

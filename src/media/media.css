@@ -1,0 +1,11 @@
+@import url('../blocks/container/media/container__media.css');
+@import url('../blocks/header/media/header__media.css');
+@import url('../blocks/lead/media/lead__media.css');
+@import url('../blocks/results/media/results__media.css');
+@import url('../blocks/search/media/search__media.css');
+@import url('../blocks/card/media/card__media.css');
+@import url('../blocks/author/media/author__media.css');
+@import url('../blocks/footer/media/footer__media.css');
+@import url('../blocks/popup/media/popup__media.css');
+@import url('../blocks/article-info/media/article-info__media.css');
+@import url('../blocks/bookmarks/media/bookmarks__media.css');

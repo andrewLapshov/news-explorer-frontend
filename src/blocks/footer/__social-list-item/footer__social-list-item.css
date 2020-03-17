@@ -1,0 +1,6 @@
+.footer__social-list-item {
+  display: inline-block;
+}
+.footer__social-list-item:first-of-type {
+  margin-right: 28px;
+}

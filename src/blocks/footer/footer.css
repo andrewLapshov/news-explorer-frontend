@@ -1,0 +1,16 @@
+@import url('./__container/footer__container.css');
+@import url('./__copyright/footer__copyright.css');
+@import url('./__menu-link/footer__menu-link.css');
+@import url('./__menu-list-item/footer__menu-list-item.css');
+@import url('./__menu-list/footer__menu-list.css');
+@import url('./__menu/footer__menu.css');
+@import url('./__social-icon/footer__social-icon.css');
+@import url('./__social-link/footer__social-link.css');
+@import url('./__social-list-item/footer__social-list-item.css');
+@import url('./__social-list/footer__social-list.css');
+
+.footer {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+}

@@ -1,0 +1,9 @@
+.results__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 16px;
+  justify-items: center;
+  margin-bottom: 64px;
+  position: relative;
+  z-index: 1;
+}

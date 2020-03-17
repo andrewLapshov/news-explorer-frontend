@@ -1,0 +1,48 @@
+@import url('./__date/card__date.css');
+@import url('./__description/card__description.css');
+@import url('./__image/card__image.css');
+@import url('./__source/card__source.css');
+@import url('./__text/card__text.css');
+@import url('./__title/card__title.css');
+@import url('./__keyword/card__keyword.css');
+@import url('./__corner-button/card__corner-button.css');
+@import url('./__corner-label/card__corner-label.css');
+@import url('./__corner-button/_remove/card__corner-button_remove.css');
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  height: 576px;
+  position: relative;
+  border-radius: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  background-color: #fff;
+  color: #1a1b22;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 292px 24px 24px;
+  cursor: pointer;
+}
+
+.card::after {
+  content: '';
+  display: none;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  bottom: -8px;
+  background: rgba(8, 29, 45, 0.1);
+  filter: blur(58px);
+  transition: opacity 0.2s ease;
+}
+
+.card:hover::after {
+  display: block;
+  opacity: 1;
+}

@@ -1,0 +1,24 @@
+.results__button {
+  width: 288px;
+  height: 64px;
+  border-radius: 80px;
+  padding: 0;
+  background: #ffffff;
+  font: inherit;
+  color: inherit;
+  border: none;
+  margin: 0 auto;
+  cursor: pointer;
+  display: none;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+
+  transition: opacity 0.2s ease;
+}
+
+.results__button:hover {
+  opacity: 0.9;
+}

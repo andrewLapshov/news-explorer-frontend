@@ -1,0 +1,17 @@
+@media screen and (max-width: 1000px) {
+  .bookmarks__list {
+    grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bookmarks__list {
+    grid-gap: 8px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .bookmarks__list {
+    grid-gap: 10px;
+  }
+}

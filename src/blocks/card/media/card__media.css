@@ -1,0 +1,56 @@
+@media screen and (max-width: 1400px) {
+  .card__corner-button:hover + .card__corner-label {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    height: 420px;
+    padding: 166px 16px 16px;
+  }
+
+  .card__image {
+    min-height: 150px;
+  }
+
+  .card__title {
+    font-size: 22px;
+    line-height: 1.09;
+  }
+
+  .card__source {
+    margin: 0;
+  }
+
+  .card__corner-button {
+    top: 8px;
+    right: 8px;
+  }
+
+  .card__keyword {
+    top: 8px;
+    left: 8px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .card {
+    height: 440px;
+    padding: 212px 16px 16px;
+  }
+
+  .card__image {
+    min-height: 196px;
+  }
+
+  .card__corner-button {
+    top: 16px;
+    right: 16px;
+  }
+
+  .card__keyword {
+    top: 16px;
+    left: 16px;
+  }
+}
