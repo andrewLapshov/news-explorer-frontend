@@ -1,0 +1,16 @@
+.header__menu-overlay {
+  position: fixed;
+  z-index: 2;
+  top: 56px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.header__menu-overlay_is-active {
+  display: block;
+}

@@ -12,6 +12,7 @@
 @import url('./_state_dropdown/header_state_dropdown.css');
 @import url('./__button-icon/_is-active/header__button-icon_is-active.css');
 @import url('./__button-icon/_state_login/header__button-icon_state_login.css');
+@import url('./__menu-overlay/header__menu-overlay.css');
 
 .header {
   font-family: Roboto;
@@ -19,5 +20,5 @@
   font-weight: normal;
   color: white;
   position: relative;
-  z-index: 5;
+  z-index: 3;
 }

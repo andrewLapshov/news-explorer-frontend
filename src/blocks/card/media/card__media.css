@@ -34,6 +34,12 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .card__text-wrapper {
+    max-height: 70px;
+  }
+}
+
 @media screen and (max-width: 426px) {
   .card {
     height: 440px;

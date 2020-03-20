@@ -21,6 +21,11 @@
   background-image: url(~images/icon/bookmark/bookmark-hover.svg);
 }
 
-.card__corner-button:focus {
+.card__corner-button_saved {
+  background-image: url(~images/icon/bookmark/bookmark-focus.svg);
+  cursor: default;
+}
+
+.card__corner-button_saved:hover {
   background-image: url(~images/icon/bookmark/bookmark-focus.svg);
 }
