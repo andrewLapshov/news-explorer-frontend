@@ -8,7 +8,7 @@
     <title>NewsExplorer</title>
     <link
       rel="stylesheet"
-      href="../articles/articles.f7a2a1f31b5cdbaa01df.css"
+      href="../articles/articles.a2e4e1894d742d755d9b.css"
     />
     <link
       rel="shortcut icon"
@@ -26,6 +26,7 @@
           </div>
           <div class="header__item-wrapper">
             <nav class="header__menu header__menu_black" tabindex="0">
+              <div class="header__menu-overlay"></div>
               <ul class="header__list  header__list_white">
                 <li class="header__list-item">
                   <div class="header__item-wrapper">
@@ -37,7 +38,7 @@
                     ></div>
                   </div>
                 </li>
-                <li class="header__list-item">
+                <li class="header__list-item header__list-item_articles">
                   <div class="header__item-wrapper">
                     <a href="/" class="header__link header__link_state_login"
                       >Сохранённые статьи</a
@@ -50,7 +51,7 @@
                 <li class="header__list-item">
                   <div class="header__item-wrapper">
                     <button class="header__button header__button_state_login">
-                      <span class="header__button-text">Андрей</span>
+                      <span class="header__button-text"></span>
                       <i
                         class="header__button-icon header__button-icon_is-active header__button-icon_state_login"
                       ></i>
@@ -70,110 +71,25 @@
           <div class="container container_section_article-info">
             <span class="article-info__subtitle">Сохранённые статьи</span>
             <h2 class="article-info__title">
-              <span class="article-info__name">Андрей</span>, у вас
-              <span class="article-info__counter">4</span> сохранённых статей
+              <span class="article-info__name"></span>, у вас
+              <span class="article-info__counter">нет</span
+              ><span class="article-info__saved"> сохранённых статей</span>
             </h2>
             <p class="article-info__text">
               По ключевым словам:
-              <span class="article-info__keywords"
-                >Природа, Тайга и 2 другим</span
-              >
+              <span class="article-info__keywords"></span>
             </p>
           </div>
         </section>
 
-        <section class="bookmarks">
-          <div class="container container_section_bookmarks">
-            <div class="bookmarks__list">
-              <div class="card">
-                <div class="card__image">
-                  <div class="card__keyword">Природа</div>
-                  <button
-                    class="card__corner-button card__corner-button_remove"
-                  ></button>
-                  <div class="card__corner-label">
-                    Удалить из сохраненных
-                  </div>
-                </div>
-                <div class="card__description">
-                  <span class="card__date">2 августа, 2019</span>
-                  <h3 class="card__title">Национальное достояние – парки</h3>
-                  <p class="card__text">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад
-                    здесь начала складываться система национальных парков –
-                    охраняемых территорий, где и сегодня каждый может
-                    приобщиться к природе.
-                  </p>
-                </div>
-                <span class="card__source">Лента.ру</span>
-              </div>
-              <div class="card">
-                <div class="card__image">
-                  <div class="card__keyword">Природа</div>
-                  <button
-                    class="card__corner-button card__corner-button_remove"
-                  ></button>
-                  <div class="card__corner-label">
-                    Удалить из сохраненных
-                  </div>
-                </div>
-                <div class="card__description">
-                  <span class="card__date">2 августа, 2019</span>
-                  <h3 class="card__title">Национальное достояние – парки</h3>
-                  <p class="card__text">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад
-                    здесь начала складываться система национальных парков –
-                    охраняемых территорий, где и сегодня каждый может
-                    приобщиться к природе.
-                  </p>
-                </div>
-                <span class="card__source">Лента.ру</span>
-              </div>
-              <div class="card">
-                <div class="card__image">
-                  <div class="card__keyword">Природа</div>
-                  <button
-                    class="card__corner-button card__corner-button_remove"
-                  ></button>
-                  <div class="card__corner-label">
-                    Удалить из сохраненных
-                  </div>
-                </div>
-                <div class="card__description">
-                  <span class="card__date">2 августа, 2019</span>
-                  <h3 class="card__title">Национальное достояние – парки</h3>
-                  <p class="card__text">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад
-                    здесь начала складываться система национальных парков –
-                    охраняемых территорий, где и сегодня каждый может
-                    приобщиться к природе.
-                  </p>
-                </div>
-                <span class="card__source">Лента.ру</span>
-              </div>
-              <div class="card">
-                <div class="card__image">
-                  <div class="card__keyword">Природа</div>
-                  <button
-                    class="card__corner-button card__corner-button_remove"
-                  ></button>
-                  <div class="card__corner-label">
-                    Удалить из сохраненных
-                  </div>
-                </div>
-                <div class="card__description">
-                  <span class="card__date">2 августа, 2019</span>
-                  <h3 class="card__title">Национальное достояние – парки</h3>
-                  <p class="card__text">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад
-                    здесь начала складываться система национальных парков –
-                    охраняемых территорий, где и сегодня каждый может
-                    приобщиться к природе.
-                  </p>
-                </div>
-                <span class="card__source">Лента.ру</span>
-              </div>
+        <section class="results">
+          <div class="container container_section_results">
+            <div class="results__list results__list_articles"></div>
+            <div class="preloader">
+              <i class="preloader__element"></i>
+              <span class="preloader__caption">Идет загрузка...</span>
             </div>
+            <span class="results__message"></span>
           </div>
         </section>
       </main>
@@ -227,6 +143,28 @@
       <div class="popup"></div>
     </div>
 
-    <script src="../articles/articles.400c741aa99829fcee62.js"></script>
+    <template class="card-bookmark-template">
+      <div class="card__wrapper">
+        <div class="card">
+          <div class="card__image">
+            <div class="card__keyword"></div>
+            <button
+              class="card__corner-button card__corner-button_remove"
+            ></button>
+            <div class="card__corner-label">Убрать из сохранённых</div>
+          </div>
+          <div class="card__description">
+            <span class="card__date"></span>
+            <h3 class="card__title"></h3>
+            <div class="card__text-wrapper">
+              <p class="card__text"></p>
+            </div>
+          </div>
+          <span class="card__source"></span>
+        </div>
+      </div>
+    </template>
+
+    <script src="../articles/articles.1934484344996a23da9a.js"></script>
   </body>
 </html>
