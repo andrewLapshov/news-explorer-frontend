@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 
-.card__corner-button:hover {
+.card__corner-button_unsaved:hover {
   background-image: url(~images/icon/bookmark/bookmark-hover.svg);
 }
 
@@ -28,4 +28,8 @@
 
 .card__corner-button_saved:hover {
   background-image: url(~images/icon/bookmark/bookmark-focus.svg);
+}
+
+.card__corner-button_remove:hover + .card__corner-label {
+  display: block;
 }

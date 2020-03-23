@@ -5,9 +5,7 @@
   flex-grow: 1;
   width: 100%;
   height: auto;
-  max-height: 120px;
-  /* text-overflow: ellipsis;
-  overflow: hidden; */
+  max-height: 100px;
 }
 
 .card__text {

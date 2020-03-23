@@ -1,3 +1,5 @@
+import errorHandler from './errorHandler';
+
 const renderPage = (api, header, articleInfo) => {
   api
     .getUserData()
@@ -7,7 +9,9 @@ const renderPage = (api, header, articleInfo) => {
         articleInfo.setUsername(res.data.name);
       }
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      errorHandler(err).then(message => console.log(message));
+    });
 };
 
 export default renderPage;

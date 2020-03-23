@@ -9,10 +9,8 @@ export default class Results extends BaseComponent {
     this._cardlist = this._element.querySelector('.results__list');
     this._preloader = this._element.querySelector('.preloader');
     this.cardsData = null;
-    this.keyWord = null;
     this.counter = null;
-    // this._handleMoreCards = this._handleMoreCards.bind(this);
-    // this._setListener();
+    this.renderedCards = [];
     this._initializeSearchResultsElems();
   }
 
@@ -28,10 +26,13 @@ export default class Results extends BaseComponent {
       this.toggleNoResults(false);
       this.toggleMoreCards(false);
     }
-    this._cardlist.textContent = '';
     this._message.textContent = '';
     this.togglePreloader(true);
     this._element.classList.add('results_is-active');
+  }
+
+  hide() {
+    this._element.classList.remove('results_is-active');
   }
 
   insertElement(node) {
@@ -62,23 +63,7 @@ export default class Results extends BaseComponent {
     }
   }
 
-  setErrorMessage(message) {
+  set errorMessage(message) {
     this._message.textContent = message;
-    // переделать в сеттер, добавить текст в конфиг
   }
-
-  // moreCardsCallback(fn) {
-  //   this._moreCardsCallback = fn;
-  // }
-
-  // _handleMoreCards(e) {
-  //   e.preventDefault();
-  //   if (typeof this._moreCardsCallback === `function`) {
-  //     return this._moreCardsCallback(this.cardsData);
-  //   }
-  // }
-
-  // _setListener() {
-  //   this._moreCards.addEventListener('click', this._handleMoreCards);
-  // }
 }

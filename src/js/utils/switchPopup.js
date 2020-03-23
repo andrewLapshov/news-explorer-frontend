@@ -5,7 +5,7 @@ const switchPopup = (firstForm, secondForm, popup) => {
       element: '.form__switch-link',
       callback: () => {
         popup.clearContent();
-        popup.setContent(secondForm.element);
+        popup.setContent(secondForm.element, secondForm.clear);
       },
     },
   ]);

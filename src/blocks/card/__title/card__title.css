@@ -6,4 +6,9 @@
   line-height: 30px;
   margin: 0 0 16px;
   max-height: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }

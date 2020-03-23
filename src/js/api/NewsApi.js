@@ -1,48 +1,31 @@
 export default class NewsApi {
   constructor(options) {
-    this.url = options.url;
-    this.headers = options.headers;
+    this._url = options.url;
+    this._headers = options.headers;
   }
 
-  getJSONResponse(res) {
+  static getJSONResponse(res) {
     if (res.ok) {
       return res.json();
     }
-    return Promise.reject(`Ошибка: ${res.status}`);
+    return Promise.reject(new Error(`Ошибка: ${res.status}`));
+  }
+
+  static _getDates() {
+    const today = new Date();
+    const lastday = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+
+    return `&from=${lastday
+      .toISOString()
+      .slice(0, 10)}&to=${today.toISOString().slice(0, 10)}`;
   }
 
   getNews(input) {
-    return fetch(`${this.url}/?q=${input}&pageSize=100&language=ru`, {
-      headers: this.headers,
-    }).then(res => this.getJSONResponse(res));
-  }
-
-  addBookmark({ cardData }) {
-    return fetch('url/articles', {
-      headers: {
-        'Content-Type': 'application/json',
+    return fetch(
+      `${this._url}/?q=${input}${NewsApi._getDates()}&pageSize=100`,
+      {
+        headers: this._headers,
       },
-      method: 'POST',
-      body: JSON.stringify({
-        cardData,
-      }),
-    }).then(res => this.getJSONResponse(res));
-  }
-
-  deleteBookmark(articleID) {
-    return fetch(`url/articles/${articleID}`, {
-      headers: {
-        // добавить токен
-      },
-      method: 'DELETE',
-    }).then(res => this.getJSONResponse(res));
-  }
-
-  getArticles() {
-    return fetch(`url/articles`, {
-      headers: {
-        // добавить токен
-      },
-    }).then(res => this.getJSONResponse(res));
+    ).then(res => NewsApi.getJSONResponse(res));
   }
 }

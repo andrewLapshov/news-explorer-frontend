@@ -22,3 +22,8 @@
   border-right: none;
   border-left: none;
 }
+
+.form__input:disabled {
+  background: #ffffff;
+  color: gray;
+}

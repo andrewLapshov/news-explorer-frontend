@@ -1,5 +1,5 @@
 @media screen and (max-width: 1400px) {
-  .card__corner-button:hover + .card__corner-label {
+  .card__corner-button_remove:hover + .card__corner-label {
     display: none;
   }
 }
@@ -28,15 +28,30 @@
     right: 8px;
   }
 
+  .card__corner-label {
+    top: 8px;
+    right: 53px;
+  }
+
   .card__keyword {
     top: 8px;
     left: 8px;
   }
+
+  .card__text-wrapper {
+    max-height: 85px;
+  }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 890px) {
   .card__text-wrapper {
-    max-height: 70px;
+    max-height: 65px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .card__text-wrapper {
+    max-height: 80px;
   }
 }
 
@@ -53,6 +68,11 @@
   .card__corner-button {
     top: 16px;
     right: 16px;
+  }
+
+  .card__corner-label {
+    top: 16px;
+    right: 61px;
   }
 
   .card__keyword {

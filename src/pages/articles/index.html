@@ -72,7 +72,8 @@
             <span class="article-info__subtitle">Сохранённые статьи</span>
             <h2 class="article-info__title">
               <span class="article-info__name"></span>, у вас
-              <span class="article-info__counter"></span> сохранённых статей
+              <span class="article-info__counter">нет</span
+              ><span class="article-info__saved"> сохранённых статей</span>
             </h2>
             <p class="article-info__text">
               По ключевым словам:
@@ -80,14 +81,6 @@
             </p>
           </div>
         </section>
-
-        <!-- <section class="bookmarks">
-          <div class="container container_section_bookmarks">
-            <div class="bookmarks__list">
-
-            </div>
-          </div>
-        </section> -->
 
         <section class="results">
           <div class="container container_section_results">
@@ -163,9 +156,11 @@
           <div class="card__description">
             <span class="card__date"></span>
             <h3 class="card__title"></h3>
-            <p class="card__text"></p>
-            <span class="card__source"></span>
+            <div class="card__text-wrapper">
+              <p class="card__text"></p>
+            </div>
           </div>
+          <span class="card__source"></span>
         </div>
       </div>
     </template>
@@ -173,92 +168,3 @@
     <script src="<%= htmlWebpackPlugin.files.chunks.articles.entry %>"></script>
   </body>
 </html>
-
-<!-- <div class="card">
-                <div class="card__image">
-                  <div class="card__keyword">Природа</div>
-                  <button
-                    class="card__corner-button card__corner-button_remove"
-                  ></button>
-                  <div class="card__corner-label">
-                    Удалить из сохраненных
-                  </div>
-                </div>
-                <div class="card__description">
-                  <span class="card__date">2 августа, 2019</span>
-                  <h3 class="card__title">Национальное достояние – парки</h3>
-                  <p class="card__text">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад
-                    здесь начала складываться система национальных парков –
-                    охраняемых территорий, где и сегодня каждый может
-                    приобщиться к природе.
-                  </p>
-                </div>
-                <span class="card__source">Лента.ру</span>
-              </div>
-              <div class="card">
-                <div class="card__image">
-                  <div class="card__keyword">Природа</div>
-                  <button
-                    class="card__corner-button card__corner-button_remove"
-                  ></button>
-                  <div class="card__corner-label">
-                    Удалить из сохраненных
-                  </div>
-                </div>
-                <div class="card__description">
-                  <span class="card__date">2 августа, 2019</span>
-                  <h3 class="card__title">Национальное достояние – парки</h3>
-                  <p class="card__text">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад
-                    здесь начала складываться система национальных парков –
-                    охраняемых территорий, где и сегодня каждый может
-                    приобщиться к природе.
-                  </p>
-                </div>
-                <span class="card__source">Лента.ру</span>
-              </div>
-              <div class="card">
-                <div class="card__image">
-                  <div class="card__keyword">Природа</div>
-                  <button
-                    class="card__corner-button card__corner-button_remove"
-                  ></button>
-                  <div class="card__corner-label">
-                    Удалить из сохраненных
-                  </div>
-                </div>
-                <div class="card__description">
-                  <span class="card__date">2 августа, 2019</span>
-                  <h3 class="card__title">Национальное достояние – парки</h3>
-                  <p class="card__text">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад
-                    здесь начала складываться система национальных парков –
-                    охраняемых территорий, где и сегодня каждый может
-                    приобщиться к природе.
-                  </p>
-                </div>
-                <span class="card__source">Лента.ру</span>
-              </div>
-              <div class="card">
-                <div class="card__image">
-                  <div class="card__keyword">Природа</div>
-                  <button
-                    class="card__corner-button card__corner-button_remove"
-                  ></button>
-                  <div class="card__corner-label">
-                    Удалить из сохраненных
-                  </div>
-                </div>
-                <div class="card__description">
-                  <span class="card__date">2 августа, 2019</span>
-                  <h3 class="card__title">Национальное достояние – парки</h3>
-                  <p class="card__text">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад
-                    здесь начала складываться система национальных парков –
-                    охраняемых территорий, где и сегодня каждый может
-                    приобщиться к природе.
-                  </p>
-                </div>
-                <span class="card__source">Лента.ру</span>
-              </div> -->

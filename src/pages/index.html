@@ -81,9 +81,11 @@
                     name="search"
                     class="search__input"
                     placeholder="Введите тему новости"
-                    value="Россия"
+                    required
                   />
-                  <button class="search__button">Искать</button>
+                  <button class="search__button" disabled>
+                    Искать
+                  </button>
                 </form>
               </div>
             </div>
@@ -258,13 +260,11 @@
 
           <label for="email" class="form__input-label">Email</label>
           <input
-            type="email"
             name="email"
             class="form__input"
             placeholder="Введите почту"
             pattern="[\w\-\.]{2,}@[\w-]{2,}(\.[\w-]{2,})?\.[\w-]{2,}"
             required
-            value="andy@andy.ru"
           />
           <span class="form__error"></span>
           <label for="password" class="form__input-label">Пароль</label>
@@ -273,13 +273,13 @@
             name="password"
             class="form__input"
             placeholder="Введите пароль"
+            minlength="8"
             required
-            value="qwerty123"
           />
           <span class="form__error"></span>
 
           <span class="form__error form__error_submit"></span>
-          <button class="form__submit" name="submit">Войти</button>
+          <button class="form__submit" name="submit" disabled>Войти</button>
           <span class="form__switch"
             >или <span class="form__switch-link">Зарегистрироваться</span></span
           >
@@ -290,7 +290,9 @@
         <div class="card__wrapper">
           <div class="card">
             <div class="card__image">
-              <button class="card__corner-button"></button>
+              <button
+                class="card__corner-button card__corner-button_unsaved"
+              ></button>
               <div class="card__corner-label">
                 Войдите, чтобы сохранять статьи
               </div>
@@ -311,69 +313,3 @@
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
   </body>
 </html>
-
-<!--
-<div class="card">
-  <div class="card__image">
-    <button class="card__corner-button"></button>
-  </div>
-  <div class="card__description">
-    <span class="card__date">2 августа, 2019</span>
-    <h3 class="card__title">Национальное достояние – парки</h3>
-    <p class="card__text">
-      В 2016 году Америка отмечала важный юбилей: сто лет назад
-      здесь начала складываться система национальных парков –
-      охраняемых территорий, где и сегодня каждый может
-      приобщиться к природе.
-    </p>
-  </div>
-  <span class="card__source">Лента.ру</span>
-</div>
-<div class="card">
-  <div class="card__image">
-    <button class="card__corner-button"></button>
-  </div>
-  <div class="card__description">
-    <span class="card__date">2 августа, 2019</span>
-    <h3 class="card__title">Национальное достояние – парки</h3>
-    <p class="card__text">
-      В 2016 году Америка отмечала важный юбилей: сто лет назад
-      здесь начала складываться система национальных парков –
-      охраняемых территорий, где и сегодня каждый может
-      приобщиться к природе.
-    </p>
-  </div>
-  <span class="card__source">Лента.ру</span>
-</div>
-<div class="card">
-  <div class="card__image">
-    <button class="card__corner-button"></button>
-  </div>
-  <div class="card__description">
-    <span class="card__date">2 августа, 2019</span>
-    <h3 class="card__title">Национальное достояние – парки</h3>
-    <p class="card__text">
-      В 2016 году Америка отмечала важный юбилей: сто лет назад
-      здесь начала складываться система национальных парков –
-      охраняемых территорий, где и сегодня каждый может
-      приобщиться к природе.
-    </p>
-  </div>
-  <span class="card__source">Лента.ру</span>
-</div>
-<div class="card">
-  <div class="card__image">
-    <button class="card__corner-button"></button>
-  </div>
-  <div class="card__description">
-    <span class="card__date">2 августа, 2019</span>
-    <h3 class="card__title">Национальное достояние – парки</h3>
-    <p class="card__text">
-      В 2016 году Америка отмечала важный юбилей: сто лет назад
-      здесь начала складываться система национальных парков –
-      охраняемых территорий, где и сегодня каждый может
-      приобщиться к природе.
-    </p>
-  </div>
-  <span class="card__source">Лента.ру</span>
-</div> -->

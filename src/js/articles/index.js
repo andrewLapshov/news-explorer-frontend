@@ -12,6 +12,8 @@ import MainApi from '../api/MainApi';
 import renderPage from '../utils/renderPage';
 import { handlerResizeMenuLoggedIn } from '../utils/handlerResizeMenu';
 
+const { GET_RESULT_ERROR } = errors;
+
 const mainApi = new MainApi({
   url: config.SERVER_URL,
 });
@@ -77,8 +79,12 @@ mainApi
                 .then(() => {
                   articleInfo.changeSummary(cardData.keyword);
                   newsCardElement.remove();
+                  results.renderedCards.pop();
+                  if (results.renderedCards.length === 0) {
+                    results.hide();
+                  }
                 })
-                .catch(err => console.log(err));
+                .catch(err => alert(err));
             }
           },
         },
@@ -89,11 +95,27 @@ mainApi
             window.open(cardData.link, '_blank');
           },
         },
+        {
+          event: 'resize',
+          element: 'window',
+          callback: newsCardElement.truncateCardText,
+        },
       ]);
+
+      results.renderedCards.push(newsCardElement);
       results.insertElement(newsCardElement.node);
       articleInfo.counter += 1;
     });
 
     articleInfo.sortSummary();
   })
-  .catch(err => console.log(err));
+  .catch(err => {
+    results.togglePreloader(false);
+    if (typeof err.text === 'function') {
+      err.text().then(error => {
+        results.errorMessage = JSON.parse(error).message;
+      });
+    } else {
+      results.errorMessage = GET_RESULT_ERROR;
+    }
+  });
