@@ -5,3 +5,7 @@
   height: 100%;
   position: relative;
 }
+
+.header__list-item_articles {
+  display: none;
+}

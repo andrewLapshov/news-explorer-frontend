@@ -1,20 +1,10 @@
 @import url('./__close/popup__close.css');
 @import url('./__content/popup__content.css');
-@import url('./__error/popup__error.css');
-@import url('./__form/popup__form.css');
-@import url('./__input/popup__input.css');
-@import url('./__input-label/popup__input-label.css');
-@import url('./__submit/popup__submit.css');
-@import url('./__switch-link/popup__switch-link.css');
-@import url('./__switch/popup__switch.css');
-@import url('./__title/popup__title.css');
 @import url('./_is-opened/popup_is-opened.css');
-@import url('./__error/_submit/popup__error_submit.css');
-@import url('./__submit/_active/popup__submit_active.css');
 
 .popup {
   position: fixed;
-  z-index: 4;
+  z-index: 10;
   top: 0;
   left: 0;
   right: 0;

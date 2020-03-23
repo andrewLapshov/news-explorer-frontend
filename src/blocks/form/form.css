@@ -1,0 +1,9 @@
+@import url('./__error/form__error.css');
+@import url('./__input/form__input.css');
+@import url('./__input-label/form__input-label.css');
+@import url('./__submit/form__submit.css');
+@import url('./__switch-link/form__switch-link.css');
+@import url('./__switch/form__switch.css');
+@import url('./__title/form__title.css');
+@import url('./__error/_submit/form__error_submit.css');
+@import url('./__submit/_active/form__submit_active.css');

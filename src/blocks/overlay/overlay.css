@@ -1,0 +1,19 @@
+@import url('./_is-opened/overlay_is-opened.css');
+
+.overlay {
+  position: fixed;
+  z-index: 4;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: block;
+  align-items: center;
+  justify-content: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+}

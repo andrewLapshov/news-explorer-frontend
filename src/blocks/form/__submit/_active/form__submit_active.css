@@ -1,0 +1,14 @@
+.form__submit_active {
+  background: #2f71e5;
+  color: white;
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  cursor: pointer;
+}
+
+.form__submit_active:hover {
+  background-color: #347eff;
+}
+
+.form__submit_active:hover:focus {
+  background-color: #2a65cc;
+}
