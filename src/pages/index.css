@@ -1,5 +1,6 @@
 @import url('../vendor/normalize.css');
 @import url('../vendor/fonts.css');
+@import url('../blocks/body/body.css');
 @import url('../blocks/preloader/preloader.css');
 
 @import url('../blocks/root/root.css');
@@ -15,14 +16,9 @@
 @import url('../blocks/card/card.css');
 @import url('../blocks/popup/popup.css');
 @import url('../blocks/form/form.css');
-@import url('../blocks/overlay/overlay.css');
 
 @import url('../media/media.css');
 
 @import url('../blocks/header/__menu/_is-active_white/header__menu_is-active_white.css');
 @import url('../blocks/header/__menu/_is-active_black/header__menu_is-active_black.css');
 @import url('../blocks/header/__list/_is-active/header__list_is-active.css');
-
-.body_is-hidden {
-  overflow: hidden;
-}

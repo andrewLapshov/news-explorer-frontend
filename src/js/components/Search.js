@@ -22,6 +22,17 @@ export default class Search extends BaseComponent {
     return this._input.value;
   }
 
+  toggleLockForm() {
+    const elements = Array.from(this._element.elements);
+
+    elements.forEach(elem => {
+      elem.toggleAttribute('disabled');
+      if (elem.name === 'submit') {
+        this._element.elements.submit.classList.toggle('search__button_active');
+      }
+    });
+  }
+
   _validateHandler(e) {
     if (e.target.validity.valueMissing) {
       this._input.placeholder = MISSING_SEARCH_VALUE_ERROR;

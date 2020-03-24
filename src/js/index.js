@@ -19,17 +19,25 @@ import toggleSaveButton from './utils/toggleSaveButton';
 import errorHandler from './utils/errorHandler';
 import { handlerResizeMenu } from './utils/handlerResizeMenu';
 
-const { GET_RESULT_ERROR } = errors;
+const {
+  SERVER_URL,
+  NEWSAPI_URL,
+  NEWSAPI_TOKEN,
+  LAST_DAY,
+  CARD_AMOUNT,
+} = config;
+const { GET_RESULT_ERROR, NO_INTERNET } = errors;
 
 const mainApi = new MainApi({
-  url: config.SERVER_URL,
+  url: SERVER_URL,
 });
 
 const newsApi = new NewsApi({
-  url: config.NEWSAPI_URL,
+  url: NEWSAPI_URL,
   headers: {
-    authorization: config.NEWSAPI_TOKEN,
+    authorization: NEWSAPI_TOKEN,
   },
+  lastDay: LAST_DAY,
 });
 
 const loginForm = new Form('.form_template-login');
@@ -50,67 +58,94 @@ if (localStorage.getItem('token')) {
 
 window.addEventListener('resize', () => handlerResizeMenu(header, popup));
 
+// Header callback setting
+
+const headerButtonHandler = e => {
+  e.preventDefault();
+
+  if (localStorage.getItem('token')) {
+    localStorage.removeItem('token');
+    header.render({ isLoggedIn: false });
+  } else {
+    popup.open(loginForm.element, loginForm.clear);
+    if (window.matchMedia('(max-width: 650px)').matches) {
+      header.toggleMenu();
+    }
+  }
+};
+
+const headerMenuHandler = e => {
+  if (
+    window.matchMedia('(max-width: 650px)').matches &&
+    e.target.classList.contains('header__menu')
+  ) {
+    header.toggleMenuButton();
+    if (!document.querySelector('.popup_is-opened')) {
+      header.toggleMenu();
+    } else {
+      popup.close();
+    }
+  }
+};
+
 header.setListeners([
   {
     event: 'click',
     element: '.header__button',
-    callback: e => {
-      e.preventDefault();
-
-      if (localStorage.getItem('token')) {
-        localStorage.removeItem('token');
-        header.render({ isLoggedIn: false });
-      } else {
-        popup.open(loginForm.element, loginForm.clear);
-        if (window.matchMedia('(max-width: 650px)').matches) {
-          header.toggleMenu();
-        }
-      }
-    },
+    callback: e => headerButtonHandler(e),
   },
   {
     event: 'click',
     element: '.header__menu',
-    callback: e => {
-      if (
-        window.matchMedia('(max-width: 650px)').matches &&
-        e.target.classList.contains('header__menu')
-      ) {
-        header.toggleMenuButton();
-        if (!document.querySelector('.popup_is-opened')) {
-          header.toggleMenu();
-        } else {
-          popup.close();
-        }
-      }
-    },
+    callback: e => headerMenuHandler(e),
   },
 ]);
+
+// Forms callback setting
+
+const loginFormHandler = e => {
+  e.preventDefault();
+  loginForm.toggleLockForm(true);
+
+  mainApi
+    .signin(loginForm.getInputValues())
+    .then(data => {
+      loginForm.toggleLockForm(false);
+      localStorage.setItem('token', data.token);
+      renderPage(mainApi, header);
+      popup.close();
+      if (window.matchMedia('(max-width: 650px)').matches) {
+        header.toggleMenuButton();
+      }
+    })
+    .catch(err => {
+      loginForm.toggleLockForm(false);
+      errorHandler(err, loginForm.setSubmitError, NO_INTERNET);
+    });
+};
+
+const signupFormHandler = e => {
+  e.preventDefault();
+  signupForm.toggleLockForm(true);
+
+  mainApi
+    .signup(signupForm.getInputValues())
+    .then(() => {
+      signupForm.toggleLockForm(false);
+      popup.clearContent();
+      popup.setContent(successForm.element);
+    })
+    .catch(err => {
+      signupForm.toggleLockForm(false);
+      errorHandler(err, signupForm.setSubmitError, NO_INTERNET);
+    });
+};
 
 loginForm.setListeners([
   {
     event: 'click',
     element: '.form__submit',
-    callback: e => {
-      e.preventDefault();
-      loginForm.toggleLockForm(true);
-
-      mainApi
-        .signin(loginForm.getInputValues())
-        .then(data => {
-          loginForm.toggleLockForm(false);
-          localStorage.setItem('token', data.token);
-          renderPage(mainApi, header);
-          popup.close();
-          if (window.matchMedia('(max-width: 650px)').matches) {
-            header.toggleMenuButton();
-          }
-        })
-        .catch(err => {
-          loginForm.toggleLockForm(false);
-          errorHandler(err).then(message => loginForm.setSubmitError(message));
-        });
-    },
+    callback: e => loginFormHandler(e),
   },
 ]);
 
@@ -118,24 +153,39 @@ signupForm.setListeners([
   {
     event: 'click',
     element: '.form__submit',
-    callback: e => {
-      e.preventDefault();
-      signupForm.toggleLockForm(true);
-
-      mainApi
-        .signup(signupForm.getInputValues())
-        .then(() => {
-          signupForm.toggleLockForm(false);
-          popup.clearContent();
-          popup.setContent(successForm.element);
-        })
-        .catch(err => {
-          signupForm.toggleLockForm(false);
-          errorHandler(err).then(message => signupForm.setSubmitError(message));
-        });
-    },
+    callback: e => signupFormHandler(e),
   },
 ]);
+
+// Search and Results callback setting
+
+const cornerButtonHandler = (e, card, data) => {
+  e.preventDefault();
+  e.stopPropagation();
+
+  if (localStorage.getItem('token')) {
+    if (e.target.classList.contains('card__corner-button_saved')) {
+      mainApi
+        .deleteBookmark(card.id)
+        .then(() => {
+          e.target.classList.toggle('card__corner-button_saved');
+        })
+        .catch(err => {
+          errorHandler(err);
+        });
+    } else {
+      mainApi
+        .addBookmark(data)
+        .then(res => {
+          e.target.classList.toggle('card__corner-button_saved');
+          card.id = res.data._id;
+        })
+        .catch(err => {
+          errorHandler(err);
+        });
+    }
+  }
+};
 
 const addNewCard = data => {
   const newsCardData = convertCardData(data, search);
@@ -145,33 +195,7 @@ const addNewCard = data => {
     {
       event: 'click',
       element: '.card__corner-button',
-      callback: e => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (localStorage.getItem('token')) {
-          if (e.target.classList.contains('card__corner-button_saved')) {
-            mainApi
-              .deleteBookmark(newsCardElement.id)
-              .then(() => {
-                e.target.classList.toggle('card__corner-button_saved');
-              })
-              .catch(err => {
-                errorHandler(err).then(message => alert(message));
-              });
-          } else {
-            mainApi
-              .addBookmark(newsCardData)
-              .then(res => {
-                e.target.classList.toggle('card__corner-button_saved');
-                newsCardElement.id = res.data._id;
-              })
-              .catch(err => {
-                errorHandler(err).then(message => alert(message));
-              });
-          }
-        }
-      },
+      callback: e => cornerButtonHandler(e, newsCardElement, newsCardData),
     },
     {
       event: 'click',
@@ -191,47 +215,64 @@ const addNewCard = data => {
   results.insertElement(newsCardElement.node);
 };
 
+const searchHandler = e => {
+  e.preventDefault();
+  search.toggleLockForm();
+
+  results.show();
+  if (results.renderedCards.length > 0) {
+    results.renderedCards.forEach(card => {
+      card.remove();
+    });
+    results.renderedCards = [];
+  }
+
+  newsApi
+    .getNews(search.input)
+    .then(res => {
+      search.toggleLockForm();
+      results.togglePreloader(false);
+      results.cardsData = res.articles;
+      if (res.articles.length > 0) {
+        for (let i = 0; i < CARD_AMOUNT; i++) {
+          if (res.articles[i]) {
+            addNewCard(res.articles[i]);
+          } else {
+            break;
+          }
+        }
+        if (res.articles.length > CARD_AMOUNT) {
+          results.toggleMoreCards(true);
+          results.counter = 3;
+        }
+      } else if (res.articles.length === 0) {
+        results.toggleNoResults(true);
+      }
+    })
+    .catch(err => {
+      search.toggleLockForm();
+      results.togglePreloader(false);
+      errorHandler(err, results.setMessageError, GET_RESULT_ERROR);
+    });
+};
+
+const moreCardsHandler = () => {
+  for (let i = results.counter; i < results.counter + CARD_AMOUNT; i++) {
+    if (results.cardsData[i]) {
+      addNewCard(results.cardsData[i]);
+    } else {
+      results.toggleMoreCards(false);
+      break;
+    }
+  }
+  results.counter += CARD_AMOUNT;
+};
+
 search.setListeners([
   {
     event: 'click',
     element: '.search__button',
-    callback: e => {
-      e.preventDefault();
-
-      results.show();
-      if (results.renderedCards.length > 0) {
-        results.renderedCards.forEach(card => {
-          card.remove();
-        });
-        results.renderedCards = [];
-      }
-
-      newsApi
-        .getNews(search.input)
-        .then(res => {
-          results.togglePreloader(false);
-          results.cardsData = res.articles;
-          if (res.articles.length > 0) {
-            for (let i = 0; i < 3; i++) {
-              if (res.articles[i]) {
-                addNewCard(res.articles[i]);
-              } else {
-                break;
-              }
-            }
-            if (res.articles.length > 3) {
-              results.toggleMoreCards(true);
-              results.counter = 3;
-            }
-          } else if (res.articles.length === 0) {
-            results.toggleNoResults(true);
-          }
-        })
-        .catch(() => {
-          results.togglePreloader(false);
-          results.errorMessage = GET_RESULT_ERROR;
-        });
-    },
+    callback: e => searchHandler(e),
   },
 ]);
 
@@ -239,17 +280,7 @@ results.setListeners([
   {
     event: 'click',
     element: '.results__button',
-    callback: () => {
-      for (let i = results.counter; i < results.counter + 3; i++) {
-        if (results.cardsData[i]) {
-          addNewCard(results.cardsData[i]);
-        } else {
-          results.toggleMoreCards(false);
-          break;
-        }
-      }
-      results.counter += 3;
-    },
+    callback: moreCardsHandler,
   },
   {
     event: 'mouseover',

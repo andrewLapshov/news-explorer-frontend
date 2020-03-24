@@ -10,7 +10,7 @@ const renderPage = (api, header, articleInfo) => {
       }
     })
     .catch(err => {
-      errorHandler(err).then(message => console.log(message));
+      errorHandler(err);
     });
 };
 

@@ -10,6 +10,7 @@ import ArticleInfo from '../components/ArticleInfo';
 import MainApi from '../api/MainApi';
 
 import renderPage from '../utils/renderPage';
+import errorHandler from '../utils/errorHandler';
 import { handlerResizeMenuLoggedIn } from '../utils/handlerResizeMenu';
 
 const { GET_RESULT_ERROR } = errors;
@@ -30,30 +31,58 @@ if (localStorage.getItem('token')) {
   window.location.href = '../';
 }
 
+// Header callback setting
+
+const headerButtonHandler = e => {
+  e.preventDefault();
+  localStorage.removeItem('token');
+  window.location.href = '../';
+};
+
+const headerMenuHandler = e => {
+  if (
+    window.matchMedia('(max-width: 650px)').matches &&
+    e.target.classList.contains('header__menu')
+  ) {
+    header.toggleMenuButton();
+    header.toggleMenu();
+  }
+};
+
 header.setListeners([
   {
     event: 'click',
     element: '.header__button',
-    callback: e => {
-      e.preventDefault();
-      localStorage.removeItem('token');
-      window.location.href = '../';
-    },
+    callback: e => headerButtonHandler(e),
   },
   {
     event: 'click',
     element: '.header__menu',
-    callback: e => {
-      if (
-        window.matchMedia('(max-width: 650px)').matches &&
-        e.target.classList.contains('header__menu')
-      ) {
-        header.toggleMenuButton();
-        header.toggleMenu();
-      }
-    },
+    callback: e => headerMenuHandler(e),
   },
 ]);
+
+// Results logic & callback setting
+
+const cornerButtonHandler = (e, card, data) => {
+  e.preventDefault();
+  e.stopPropagation();
+  if (window.confirm('Вы действительно хотите удалить эту новость?')) {
+    mainApi
+      .deleteBookmark(data._id)
+      .then(() => {
+        articleInfo.changeSummary(data.keyword);
+        card.remove();
+        results.renderedCards.pop();
+        if (results.renderedCards.length === 0) {
+          results.hide();
+        }
+      })
+      .catch(err => {
+        errorHandler(err);
+      });
+  }
+};
 
 results.show();
 mainApi
@@ -68,25 +97,7 @@ mainApi
         {
           event: 'click',
           element: '.card__corner-button',
-          callback: e => {
-            e.preventDefault();
-            e.stopPropagation();
-            if (
-              window.confirm('Вы действительно хотите удалить эту новость?')
-            ) {
-              mainApi
-                .deleteBookmark(cardData._id)
-                .then(() => {
-                  articleInfo.changeSummary(cardData.keyword);
-                  newsCardElement.remove();
-                  results.renderedCards.pop();
-                  if (results.renderedCards.length === 0) {
-                    results.hide();
-                  }
-                })
-                .catch(err => alert(err));
-            }
-          },
+          callback: e => cornerButtonHandler(e, newsCardElement, cardData),
         },
         {
           event: 'click',
@@ -111,11 +122,5 @@ mainApi
   })
   .catch(err => {
     results.togglePreloader(false);
-    if (typeof err.text === 'function') {
-      err.text().then(error => {
-        results.errorMessage = JSON.parse(error).message;
-      });
-    } else {
-      results.errorMessage = GET_RESULT_ERROR;
-    }
+    errorHandler(err, results.setMessageError, GET_RESULT_ERROR);
   });

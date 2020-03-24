@@ -83,7 +83,7 @@
                     placeholder="Введите тему новости"
                     required
                   />
-                  <button class="search__button" disabled>
+                  <button class="search__button" name="submit" disabled>
                     Искать
                   </button>
                 </form>
@@ -123,11 +123,20 @@
 
         <section class="author">
           <div class="container container_section_author">
-            <img
-              src="<%=require('../images/author.jpg')%>"
-              alt="Фото автора"
-              class="author__photo"
-            />
+            <picture>
+              <source
+                srcset="<%=require('../images/author/author_small.jpg')%>"
+                media="(max-width: 1024px)"
+                alt="Фото автора"
+                class="author__photo"
+              />
+              <img
+                src="<%=require('../images/author/author.jpg')%>"
+                alt="Фото автора"
+                class="author__photo"
+              />
+            </picture>
+
             <div class="author__about">
               <h2 class="author__title">Об авторе</h2>
               <p class="author__description">

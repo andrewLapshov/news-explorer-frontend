@@ -31,16 +31,16 @@
     height: 56px;
     padding: 0 16px;
   }
+
+  .container.container_section_author {
+    flex-direction: column;
+    padding: 32px 16px 80px;
+  }
 }
 
 @media screen and (max-width: 550px) {
   .container.container_section_results {
     padding: 32px 16px;
-  }
-
-  .container.container_section_author {
-    flex-direction: column;
-    padding: 32px 16px 80px;
   }
 
   .container.container_section_footer {

@@ -1,5 +1,7 @@
 @import url(~vendor/normalize.css);
 @import url(~vendor/fonts.css);
+@import url(~blocks/body/body.css);
+
 @import url(~blocks/preloader/preloader.css);
 
 @import url(~blocks/root/root.css);
@@ -19,7 +21,3 @@
 @import url(~blocks/header/__menu/_is-active_white/header__menu_is-active_white.css);
 @import url(~blocks/header/__menu/_is-active_black/header__menu_is-active_black.css);
 @import url(~blocks/header/__list/_is-active/header__list_is-active.css);
-
-.body_is-hidden {
-  overflow: hidden;
-}

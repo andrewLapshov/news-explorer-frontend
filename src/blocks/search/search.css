@@ -3,6 +3,7 @@
 @import url('./__button/_active/search__button_active.css');
 
 .search {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   margin: 0 auto;
   position: relative;
 }

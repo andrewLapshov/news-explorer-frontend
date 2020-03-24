@@ -18,3 +18,8 @@
   line-height: 1.37;
   color: #b6bcbf;
 }
+
+.search__input:disabled {
+  background: #ffffff;
+  color: gray;
+}

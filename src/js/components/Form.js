@@ -15,7 +15,7 @@ export default class Form extends BaseComponent {
       .querySelector(template)
       .content.cloneNode(true)
       .querySelector('.form');
-
+    this.setSubmitError = this.setSubmitError.bind(this);
     this.clear = this.clear.bind(this);
     this.setListeners([
       {
@@ -68,15 +68,14 @@ export default class Form extends BaseComponent {
 
   getInputValues() {
     const values = {};
-    const res = Array.from(this._element.elements);
-    for (let i = 0; i < res.length - 1; i++) {
-      values[res[i].name] = res[i].value;
-    }
+    Array.from(this._element.elements).forEach(elem => {
+      if (elem.name !== 'submit') values[elem.name] = elem.value;
+    });
     return values;
   }
 
   setSubmitError(err) {
-    this._element.querySelector('.form__error_submit').textContent = `${err}`;
+    this._element.querySelector('.form__error_submit').textContent = err;
   }
 
   clear() {
