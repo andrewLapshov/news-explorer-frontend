@@ -11,7 +11,7 @@
     <title>NewsExplorer</title>
     <link
       rel="stylesheet"
-      href="main/main.cd8e0280a61e5913d0e7.css"
+      href="main/main.af5acacd39958a011fba.css"
     />
     <link
       rel="shortcut icon"
@@ -83,7 +83,7 @@
                     placeholder="Введите тему новости"
                     required
                   />
-                  <button class="search__button" disabled>
+                  <button class="search__button" name="submit" disabled>
                     Искать
                   </button>
                 </form>
@@ -123,11 +123,20 @@
 
         <section class="author">
           <div class="container container_section_author">
-            <img
-              src="./images/author.jpg"
-              alt="Фото автора"
-              class="author__photo"
-            />
+            <picture>
+              <source
+                srcset="./images/author_small.jpg"
+                media="(max-width: 1024px)"
+                alt="Фото автора"
+                class="author__photo"
+              />
+              <img
+                src="./images/author.jpg"
+                alt="Фото автора"
+                class="author__photo"
+              />
+            </picture>
+
             <div class="author__about">
               <h2 class="author__title">Об авторе</h2>
               <p class="author__description">
@@ -313,6 +322,6 @@
       </template>
     </div>
 
-    <script src="main/main.1934484344996a23da9a.js"></script>
+    <script src="main/main.2cc250229a3fb0cd1226.js"></script>
   </body>
 </html>
