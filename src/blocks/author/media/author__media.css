@@ -1,19 +1,12 @@
 @media screen and (max-width: 1024px) {
   .author__photo {
     max-width: 232px;
-    width: calc(100% - 424px);
     margin-right: 32px;
   }
 
   .author__title {
     font-size: 30px;
     margin-top: 0;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .author__photo {
-    width: 100%;
   }
 }
 

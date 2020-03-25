@@ -4,3 +4,7 @@
 @import url('./__subtitle/article-info__subtitle.css');
 @import url('./__text/article-info__text.css');
 @import url('./__title/article-info__title.css');
+
+.article-info {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}

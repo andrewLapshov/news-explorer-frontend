@@ -12,6 +12,7 @@ export default class Results extends BaseComponent {
     this.counter = null;
     this.renderedCards = [];
     this._initializeSearchResultsElems();
+    this.setMessageError = this.setMessageError.bind(this);
   }
 
   _initializeSearchResultsElems() {
@@ -63,7 +64,7 @@ export default class Results extends BaseComponent {
     }
   }
 
-  set errorMessage(message) {
+  setMessageError(message) {
     this._message.textContent = message;
   }
 }

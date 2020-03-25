@@ -7,3 +7,7 @@
 @import url('./__title/form__title.css');
 @import url('./__error/_submit/form__error_submit.css');
 @import url('./__submit/_active/form__submit_active.css');
+
+.form {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
